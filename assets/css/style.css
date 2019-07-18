@@ -1,12 +1,69 @@
+html, body{
+    padding: 0%;
+    margin: 0%;
+    background-color: #191919;
+    color: #FFFBFE;
+}
+
 /* style for the sidebar */
 .sidebar{
-    background-color: whitesmoke;
-    border-right: 3px solid #000000;
-    height: auto;
+    background-color: transparent;
+    height: 100%;
 }
 h1{
     text-align: center;
+    font-family: 'Carrois Gothic SC', sans-serif !important;
+    padding: 2.5%;
+    padding-bottom: 0%;
+}
+.form-inline{
+    display: block;
+    margin: auto;
+}
+.navbar{
+    background-color: transparent !important;
+}
+.btn-outline-success{
+    color: #FFFBFE;
+    border-color:#FFFBFE;
+}
+.btn-outline-success:hover{
+    background-color: #4F4F54;
+    border-color:#FFFBFE;
 }
 .sidebar .btn{
     margin: 2px;
+}
+.topic-btn{
+    font-size: 1.2em;
+    font-family: 'Harmattan', sans-serif !important;
+    border-color: #3F6887;
+    color: #FFFBFE;
+}
+.topic-btn:hover{
+    background-color: #3F6887;
+    border-color: #3F6887;
+}
+
+/* style for gif container */
+#giphy-container .row{
+    display: inline-flex;
+    padding: 1%;
+}
+#giphy-container .row .col{
+    margin: 5px;
+    position: relative;
+}
+.giphy{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
+    margin: auto;
+    border: 2px solid #FFFBFE;
+}
+.rating{
+    font-family: 'Carrois Gothic SC', sans-serif !important;
+    text-align: center;
 }
