@@ -43,6 +43,7 @@ $('#search-btn').on('click', function(event){
     //adds button with the search input value
     ShowTopicButton(searchQuery);
     console.log(topics)
+    ShowGiphyResult();
     
 });
 
@@ -50,15 +51,55 @@ $('#search-btn').on('click', function(event){
 $('.topic-btn').on('click', function(event){
     event.preventDefault();
     console.log($(this).val());
-    
+
+    searchQuery = $(this).val();
+    console.log("this is the searchQuery " + searchQuery);
+    ShowGiphyResult();
+});
+
+
+function ShowGiphyResult(){
     $.ajax({
         url : "http://api.giphy.com/v1/gifs/search?q=" + searchQuery + "&api_key=NBFFDFiAlmknq6pwxTbJJdrC3YQs31yb&limit=10",
         method : "GET"
     }).then(function(result){
 
         console.log(result);
+        console.log("length of the result data is: " + result.data.length)
+
+        var searchResult = result.data;
         
+        $.each(searchResult, function(index, value){
+            var image = $('<img>');
+            var imagePause = searchResult[index].images.fixed_height_still.url;
+            var imagePlay = searchResult[index].images.fixed_height.url;
+            var imageID = searchResult[index].id;
+            image.attr('src', imagePause);
+            image.attr('id', imageID);
+            image.attr('data-state', 'still');
+            image.attr('data-still', imagePause);
+            image.attr('data-animate', imagePlay)
+            image.attr('class', 'giphy')
+
+                    
+            var column = $('<div class="col">');
+            column.prepend(image);
+            $('#giphy-container .row').append(column);
+            
+        });
+        
+        //make the giphy still 
+        $('.giphy').on('click', function(){
+            var state = $(this).attr('data-state')
+            if (state === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+              } else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+              }
+        })
         //this clears the search input box after the query is being submitted
         $('#search-box').val('');
     });
-})
+}
