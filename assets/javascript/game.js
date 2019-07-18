@@ -22,6 +22,8 @@ function ShowTopicButton(dataQuery){
 
     //adds new button
     $('.sidebar').append(topicBtn);
+
+    // CheckDuplicatedTopic();
 }
 
 //a method that creates button for each default value in the array
@@ -37,14 +39,27 @@ $('#search-btn').on('click', function(event){
     //a variable to get the search input's value
     searchQuery = $('#search-box').val();
 
-    //the search input value is being added to the array
-    topics.push(searchQuery);
+    console.log("these are topics " + topics);
 
-    //adds button with the search input value
-    ShowTopicButton(searchQuery);
-    console.log(topics)
-    ShowGiphyResult();
+    CheckDuplicatedTopic();
+    
+    $('#giphy-container .row').html('');
 });
+
+//a function that checks for a duplicated topic
+function CheckDuplicatedTopic(){
+    if(topics.includes(searchQuery)){
+        console.log("duplicated found!")
+    }else{
+         //the search input value is being added to the array
+         topics.push(searchQuery);
+
+         //adds button with the search input value
+         ShowTopicButton(searchQuery);
+         console.log(topics)
+         ShowGiphyResult();
+    }
+}
 
 //a  click event for the buttons in the sidebar
 $('.topic-btn').on('click', function(event){
@@ -100,7 +115,7 @@ function ShowGiphyResult(){
                 $(this).attr("data-state", "still");
               }
         })
-        
+
         //this clears the search input box after the query is being submitted
         $('#search-box').val('');
     });
