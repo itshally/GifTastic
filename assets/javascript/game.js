@@ -44,7 +44,6 @@ $('#search-btn').on('click', function(event){
     ShowTopicButton(searchQuery);
     console.log(topics)
     ShowGiphyResult();
-    
 });
 
 //a  click event for the buttons in the sidebar
@@ -54,7 +53,9 @@ $('.topic-btn').on('click', function(event){
 
     searchQuery = $(this).val();
     console.log("this is the searchQuery " + searchQuery);
+    
     ShowGiphyResult();
+    $('#giphy-container .row').html('');
 });
 
 
@@ -85,7 +86,7 @@ function ShowGiphyResult(){
             var column = $('<div class="col">');
             column.prepend(image);
             $('#giphy-container .row').append(column);
-            
+            // $('#giphy-container .row').replaceWith($('#giphy-container .row .col'));
         });
         
         //make the giphy still 
@@ -99,7 +100,9 @@ function ShowGiphyResult(){
                 $(this).attr("data-state", "still");
               }
         })
+        
         //this clears the search input box after the query is being submitted
         $('#search-box').val('');
     });
 }
+
