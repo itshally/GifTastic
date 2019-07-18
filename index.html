@@ -14,20 +14,28 @@
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
-        
         <div class="container-fluid">
             <div class="row">
-                <!-- sidebar where all buttons appear -->
+                <!-- a sidebar where all the buttons will appear -->
                 <div class="col-4 sidebar">
                     <h1>GifTastic</h1>
 
-                    <!-- a navbar where there is a search input and a button -->
+                    <!-- a navbar where the search input and a submit button are placed -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" id="search-box" placeholder="Add an animal" aria-label="Search">
-                            <input class="btn btn-outline-success my-2 my-sm-0" id="search-btn" type="submit" value="Add Animal Button">
+                            <!-- search input -->
+                            <input class="form-control mr-sm-2" type="search" id="search-box" placeholder="Search giphy here.." aria-label="Search">
+                            
+                            <!-- submit button -->
+                            <input class="btn btn-outline-success my-2 my-sm-0" id="search-btn" type="submit" value="Add Topic">
                         </form>
                     </nav>
+                    <!-- alert box -->
+                    <div class="container alert-container">
+                        <div class="alert alert-danger" role="alert">
+                            <!-- error message here -->
+                        </div>
+                    </div>
                     
                     <!-- buttons will appear below this comment -->
                 </div>
@@ -38,12 +46,14 @@
                     <!-- container where all the gifs appear -->
                     <div class="container" id="giphy-container">
                         <div class="row">
-                            
+                            <!-- each giphy will be in a colum -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        
 
         <!-- bootstrap js -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
