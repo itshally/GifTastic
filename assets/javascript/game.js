@@ -91,7 +91,7 @@ $('.topic-btn').on('click', function(event){
 function ShowGiphyResult(){
 
     $.ajax({
-        url : "http://api.giphy.com/v1/gifs/search?q=" + searchQuery + "&api_key=NBFFDFiAlmknq6pwxTbJJdrC3YQs31yb&limit=10",
+        url : "https://api.giphy.com/v1/gifs/search?q=" + searchQuery + "&api_key=NBFFDFiAlmknq6pwxTbJJdrC3YQs31yb&limit=10",
         method : "GET"
     }).then(function(result){
 
