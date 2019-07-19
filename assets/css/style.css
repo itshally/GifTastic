@@ -9,6 +9,7 @@ html, body{
 .sidebar{
     background-color: transparent;
     height: 100%;
+    width: 20%;
 }
 h1{
     text-align: center;
@@ -66,4 +67,29 @@ h1{
 .rating{
     font-family: 'Carrois Gothic SC', sans-serif !important;
     text-align: center;
+}
+
+/* media queries for tables */
+@media screen and (max-width: 1024px){
+    .sidebar{
+        width: 30%;
+    }
+    .navbar{
+        width: 100%;
+        display: block;
+    }
+    #search-box{
+        width: 100%;
+    }
+    #search-btn{
+        display: block;
+        margin: 10px auto !important;
+    }
+}
+
+/* media queries for mobiles */
+@media screen and (max-width: 640px){
+    .sidebar{
+        width: 100%;
+    }
 }
