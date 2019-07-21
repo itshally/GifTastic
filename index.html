@@ -13,6 +13,9 @@
         <!-- google fonts -->
         <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC|Harmattan&display=swap" rel="stylesheet">
 
+        <!-- fontawesome -->
+        <script src="https://kit.fontawesome.com/e57fa30f49.js"></script>
+
         <!-- custom css -->
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
@@ -27,7 +30,11 @@
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <form class="form-inline my-2 my-lg-0">
                             <!-- search input -->
-                            <input class="form-control mr-sm-2" type="search" id="search-box" placeholder="Search giphy here.." aria-label="Search">
+                            <div class="search-input-container  form-control">
+                                <i class="fas fa-search"></i>
+                                <input class="form-control mr-sm-2" type="search" id="search-box" placeholder="Search giphy here.." aria-label="Search">
+                            </div>
+                            
                             
                             <!-- submit button -->
                             <input class="btn btn-outline-success my-2 my-sm-0" id="search-btn" type="submit" value="Add Topic">
