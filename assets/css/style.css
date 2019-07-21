@@ -24,6 +24,34 @@ h1{
 .navbar{
     background-color: transparent !important;
 }
+.search-input-container{
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 5px 10px;
+}
+#search-box{
+    background-color: transparent;
+    border: none !important;
+    outline: none !important;
+    padding: 0% !important;
+    margin: -5% auto !important;
+    color: #FFFFFF;
+    text-indent: 8px;
+}
+.form-control:focus{
+    border-color: none !important;
+    box-shadow: none !important;
+}
+@-webkit-keyframes autofill {
+    to {
+        color: #FFFFFF;
+        background: transparent;
+    }
+}
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
 .btn-outline-success{
     color: #FFFBFE;
     border-color:#FFFBFE;
