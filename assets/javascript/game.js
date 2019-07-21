@@ -69,23 +69,30 @@ function CheckDuplicatedTopic(){
 
          //the alert will then hide if it's a success
          $('.alert-container').slideUp();
+
+         
     }
+    ButtonFunction();
 }
 
 
 //a click event for the buttons in the sidebar
-$('.topic-btn').on('click', function(event){
-    event.preventDefault();
-
-    //a variable with the value of the input text box
-    searchQuery = $(this).val();
-
-    //shows the 10 gifs when the user clicks the button
-    ShowGiphyResult();
-
-    //below this line overwrites the 10 gifs 
-    $('#giphy-container .row').html('');
-});
+function ButtonFunction(){
+    $('.topic-btn').on('click', function(event){
+        event.preventDefault();
+    
+        //a variable with the value of the input text box
+        searchQuery = $(this).val();
+        console.log("clicked on: " + searchQuery)
+        
+        //shows the 10 gifs when the user clicks the button
+        ShowGiphyResult();
+    
+        //below this line overwrites the 10 gifs 
+        $('#giphy-container .row').html('');
+    });    
+}
+ButtonFunction();
 
 //a function that shows the giphy
 function ShowGiphyResult(){
