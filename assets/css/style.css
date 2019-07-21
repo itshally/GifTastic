@@ -28,15 +28,21 @@ h1{
     background-color: #000000;
     color: #FFFFFF;
     padding: 5px 10px;
+    width: auto;
 }
 #search-box{
     background-color: transparent;
     border: none !important;
     outline: none !important;
     padding: 0% !important;
-    margin: -5% auto !important;
+    /* margin: -5% auto !important; */
+    margin-top: -5px !important;
     color: #FFFFFF;
     text-indent: 8px;
+}
+#search-btn{
+    display: block;
+    margin: 10px auto !important;
 }
 .form-control:focus{
     border-color: none !important;
@@ -106,13 +112,38 @@ input:-webkit-autofill {
         width: 100%;
         display: block;
     }
+    .search-input-container{
+        width: 100%;
+    }
     #search-box{
-        margin: -20% auto !important;
-        text-indent: 10px;
+        width: 100%;
+        margin-top: -50px !important;
+        text-indent: 25px;
     }
     #search-btn{
         display: block;
         margin: 10px 25% !important;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .sidebar{
+        width: 30%;
+    }
+    .navbar{
+        width: 100%;
+        display: block;
+    }
+    .search-input-container{
+        width: 100%;
+    }
+    #search-box{
+        width: 100%;
+        margin-top: -40% !important;
+    }
+    #search-btn{
+        display: block;
+        margin: 10px 20% !important;
     }
 }
 
@@ -121,8 +152,17 @@ input:-webkit-autofill {
     .sidebar{
         width: 100%;
     }
+    .search-input-container{
+        width: 100%;
+        /* background-color: red; */
+    }
     #search-box{
-        margin: -13% auto !important;
+        /* background-color: blue; */
+        margin-top: -30px !important;
         text-indent: 25px;
+    }
+    #search-btn{
+        display: block;
+        margin: 10px auto !important;
     }
 }
